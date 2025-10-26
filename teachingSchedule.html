@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/css/base.css">
+</head>
+
+<body>
+<div class="container">
+  <div class="days" id="days">
+    <div class="day " onclick="showSchedule('senin', event)">Senin</div>
+    <div class="day" onclick="showSchedule('selasa', event)">Selasa</div>
+    <div class="day" onclick="showSchedule('rabu', event)">Rabu</div>
+    <div class="day" onclick="showSchedule('kamis', event)">Kamis</div>
+    <div class="day" onclick="showSchedule('jumat', event)">Jumat</div>
+    <div class="day" onclick="showSchedule('sabtu', event)">Sabtu</div>
+  </div>
+
+  <div class="schedule" id="schedule"></div>
+</div>
+
+  <script src="/js/teachingSchedule.js"></script>
+</body>
+</html>
