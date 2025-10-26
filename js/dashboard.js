@@ -17,3 +17,31 @@ courses.forEach(course => {
 
   courseContainer.appendChild(card);
 });
+
+// ==== POPUP LOGIC ====
+const popup = document.getElementById("bapPopup");
+const closeBtn = document.getElementById("closePopup");
+const saveBtn = document.getElementById("saveBAP");
+
+// Ketika klik salah satu schedule card → tampilkan popup
+document.querySelectorAll(".schedule-card").forEach(card => {
+  card.addEventListener("click", () => {
+    popup.style.display = "flex";
+  });
+});
+
+// Tombol batal menutup popup
+closeBtn.addEventListener("click", () => {
+  popup.style.display = "none";
+});
+
+// Tombol simpan (contohnya hanya menutup popup)
+saveBtn.addEventListener("click", () => {
+  const materi = document.getElementById("materiInput").value;
+  const indikator = document.getElementById("indikatorInput").value;
+  const tempat = document.getElementById("tempatInput").value;
+
+  console.log("Data BAP disimpan:", { materi, indikator, tempat });
+  alert("BAP berhasil disimpan!");
+  popup.style.display = "none";
+});
