@@ -1,0 +1,7 @@
+{
+    "notifications": [
+        "You have a new message",
+        "Your profile has been updated",
+        "New comment on your post"
+    ]
+}
