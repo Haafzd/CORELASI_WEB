@@ -25,6 +25,10 @@ fetch('menu.json')
         const headerTitle = document.querySelector('.header-title');
           headerTitle.innerHTML = item.label;
           $('#main-content-place').load(item.link);
+
+          if (window.innerWidth <= 768){
+            $('#nav-place').removeClass('active');
+          }
         });
       contentNav.appendChild(navItem);
     });
@@ -35,3 +39,8 @@ fetch('menu.json')
     console.error('hayoloh eror :', error);
   });
 
+  // burger
+$('.burger').click(function() {
+    $('#nav-place').toggleClass('active');
+});
+$('#main-content-place').load('dashboard.html');

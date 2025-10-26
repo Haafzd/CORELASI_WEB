@@ -3,7 +3,7 @@
   "userRole": "teacher",
   "menu": [
     {
-      "icon": "./aset/home.png",
+      "icon": "./aset/dashboard.png",
       "label": "Dashboard",
       "link": "dashboard.html",
       "jsFile": "./js/dashboard.js"
