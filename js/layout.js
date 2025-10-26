@@ -23,6 +23,8 @@ fetch('menu.json')
         navItem.style.cursor = 'pointer'; //nantimah tambahin href aja di a nya
         navItem.addEventListener('click', function() {
         const headerTitle = document.querySelector('.header-title');
+        $('.nav-item').removeClass('active');
+        $(this).addClass('active');
           headerTitle.innerHTML = item.label;
           $('#main-content-place').load(item.link);
 
@@ -43,4 +45,3 @@ fetch('menu.json')
 $('.burger').click(function() {
     $('#nav-place').toggleClass('active');
 });
-$('#main-content-place').load('dashboard.html');

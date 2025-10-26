@@ -46,6 +46,10 @@ a{
     gap: 20px;
     height:100%;
 }
+.nav-item.active, .nav-item:hover{
+  transition:0.3s;
+  border-bottom: 1px solid #24a0ff;
+}
 #footer-place{
   position: absolute;
   text-align: center;
