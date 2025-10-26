@@ -1,0 +1,24 @@
+{
+  "logo": "./aset/logo.png",
+  "userRole": "teacher",
+  "menu": [
+    {
+      "icon": "./aset/dashboard.png",
+      "label": "Dashboard",
+      "link": "dashboard.html",
+      "jsFile": "./js/dashboard.js"
+    },
+    {
+      "icon": "./aset/teaching.png",
+      "label": "Jadwal Mengajar",
+      "link": "teachingSchedule.html",
+      "jsFile": "./js/teachingSchedule.js"
+    },
+    {
+      "icon": "./aset/teaching.png",
+      "label": "Mata Pelajaran",
+      "link": "course.html",
+      "jsFile": "./js/course.js"
+    }
+  ]
+}
