@@ -7,7 +7,7 @@ fetch('data/menu.json')
     const logoDiv = document.createElement('div');
     logoDiv.className = 'logo';
     logoDiv.innerHTML = `
-      <img src="${data.logo}" alt="Logo" style="width:100%;">
+      <img src="${data.logo}" alt="Logo" style="width:200px;">
       <a>${data.userRole}</a>
     `;
     nav.appendChild(logoDiv);
