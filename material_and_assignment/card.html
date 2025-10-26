@@ -1,7 +1,66 @@
 <link rel="stylesheet" href="../css/base.css" />
 <link rel="stylesheet" href="../css/assignment.css" />
-<div class="material">
-  <!-- isi content materi -->
+<div class="material-card">
+  <div class="material-header">
+    <h2>Materi</h2>
+    <div class="material-actions">
+      <button id="add-material-btn" class="action-icon" title="Tambah Materi">
+        <img src="/CORELASI_WEB/aset/add_circle.png" alt="Tambah" />
+      </button>
+      <button id="toggle-collapse-btn" class="action-icon" title="Lipat/Buka">
+        <img src="/CORELASI_WEB/aset/arrow-drop-down.png" alt="Buka/Tutup" />
+      </button>
+    </div>
+  </div>
+
+  <div id="material-content" class="material-content">
+    <div class="material-item">
+      <h3>Materi Pertemuan 1</h3>
+      <p>
+        Topik: Bilangan dan Operasi Dasar Deskripsi Materi: Pada pertemuan
+        pertama ini, mahasiswa akan mempelajari konsep dasar tentang bilangan
+        sebagai fondasi utama dalam matematika. Pembahasan mencakup pengenalan
+        jenis-jenis bilangan (bilangan bulat, rasional, irasional, dan real)
+        serta sifat-sifatnya dalam operasi aritmetika dasar seperti penjumlahan,
+        pengurangan, perkalian, dan pembagian.
+      </p>
+      <a
+        href="https://drive.google.com/drive/folders/1IpQiQn1IVZylUwhW-x9tgsZJY37vOJe_?usp=drive_link"
+        class="link-display"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        https://drive.google.com/drive/folders/1IpQiQn1IVZylUwhW-x9tgsZJY37vOJe_?usp=drive_link
+      </a>
+    </div>
+  </div>
+</div>
+
+<div id="add-material-modal" class="modal-overlay">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Tambah Materi</h2>
+      <button id="close-modal-btn" class="close-icon" title="Tutup">
+        &times;
+      </button>
+    </div>
+
+    <form id="add-material-form" class="modal-form">
+      <div class="form-group">
+        <label for="nama-materi">Nama Materi</label>
+        <input type="text" name="nama-materi" id="nama-materi" />
+      </div>
+      <div class="form-group">
+        <label for="deskripsi">Deskripsi</label>
+        <input type="text" name="deskripsi" id="deskripsi" />
+      </div>
+      <div class="form-group">
+        <label for="link-materi">Link Materi</label>
+        <input type="text" name="link-materi" id="link-materi" />
+      </div>
+      <button type="submit" class="submit-btn">Simpan Materi</button>
+    </form>
+  </div>
 </div>
 <div class="assignment">
   <div class="content">
@@ -73,3 +132,4 @@
 </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="../js/tugas.js"></script>
+<script src="/CORELASI_WEB/js/material.js"></script>
