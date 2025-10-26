@@ -1,9 +1,74 @@
-<link rel="stylesheet" href="/css/base.css" />
+<link rel="stylesheet" href="../css/base.css" />
 <div class="material">
   <!-- isi content materi -->
 </div>
 <div class="assignment">
   <div class="content">
-    <h3>Tugas</h3>
+    <div class="content-header">
+      <div class="header-left">
+        <h3>Tugas</h3>
+      </div>
+      <div class="header-rgt">
+        <a id="arrow-btn" class="toggle-btn">
+          <img src="../aset/dropDown.png" alt="Toggle" class="dropdown-icon" />
+        </a>
+        <a id="add-task-btn" class="add-btn">
+          <img src="../aset/add_circle.png" alt="Tambah" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="assignment-list" id="asg-list">
+    <a href="tgsPertemuan.html" class="asg-item">
+      <h4>Tugas Pertemuan 1</h4>
+      <p>tugas ini adalah tugas fardu ain</p>
+      <div class="item-link">https://dribbble.com/search/drop-down</div>
+    </a>
+    <a href="tgsPertemuan.html" class="asg-item">
+      <h4>Tugas Pertemuan 2</h4>
+      <p>tugas ini adalah tugas fardu ain</p>
+      <div class="item-link">https://dribbble.com/search/drop-down</div>
+    </a>
+    <a href="tgsPertemuan.html" class="asg-item">
+      <h4>Tugas Pertemuan 1</h4>
+      <p>tugas ini adalah tugas fardu ain</p>
+      <div class="item-link">https://dribbble.com/search/drop-down</div>
+    </a>
+  </div>
+  <div id="add-task-card" class="card-overlay">
+    <div class="card-content">
+      <form id="add-task-form">
+        <h2>Tambah Tugas</h2>
+
+        <div class="form-group">
+          <label for="nama-tugas">Nama Tugas</label>
+          <input type="text" id="nama-tugas" name="nama-tugas" required />
+        </div>
+
+        <div class="form-group">
+          <label for="deskripsi">Deskripsi</label>
+          <textarea id="deskripsi" name="deskripsi" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="link-pengumpulan">Link Pengumpulan</label>
+          <input type="text" id="link-pengumpulan" name="link-pengumpulan" />
+        </div>
+
+        <div class="form-group">
+          <label for="tenggat">Tenggat</label>
+          <input type="date" id="tenggat" name="tenggat" />
+        </div>
+
+        <div class="form-buttons">
+          <button type="button" id="cancel-btn" class="btn btn-cancel">
+            Cancel
+          </button>
+          <button type="submit" class="btn btn-submit">Submit</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="../js/tugas.js"></script>
