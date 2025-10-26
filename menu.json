@@ -1,0 +1,42 @@
+{
+  "logo": "./aset/logo.png",
+  "userRole": "teacher",
+  "menu": [
+    {
+      "icon": "./aset/dashboard.png",
+      "label": "Dashboard",
+      "link": "dashboard.html",
+      "jsFile": "./js/dashboard.js"
+    },
+    {
+      "icon": "./aset/teaching.png",
+      "label": "Jadwal Mengajar",
+      "link": "teachingSchedule.html",
+      "jsFile": "./js/teachingSchedule.js"
+    },
+    {
+      "icon": "./aset/class.png",
+      "label": "Kelas",
+      "link": "class.html",
+      "jsFile": "./js/class.js"
+    },
+    {
+      "icon": "./aset/managemenAbsensiPiket.png",
+      "label": "Management Absensi Piket",
+      "link": "picketAttendManage.html",
+      "jsFile": "./js/picketAttendManage.js"
+    },
+    {
+      "icon": "./aset/reportWalikelas.png",
+      "label": "Report Wali Kelas",
+      "link": "formTeacherReport.html",
+      "jsFile": "./js/formTeacherReport.js"
+    },
+    {
+      "icon": "./aset/profSetting.png",
+      "label": "Profile Setting",
+      "link": "profileSetting.html",
+      "jsFile": "./js/profileSetting.js"
+    }
+  ]
+}
