@@ -428,7 +428,7 @@ h2 {
 }
 
 /* ================== LANDING ================== */
-body.landing {
+.landing {
   display: grid;
   grid-template-rows: 1fr auto;
   background: #ffffff;
@@ -764,10 +764,10 @@ body.landing {
   font-family: "Poppins", sans-serif;
 }
 
-body {
+/* body {
   background-color: #f3f3f3;
   padding: 40px;
-}
+} */
 
 /* Container utama */
 .dashboard-container {
