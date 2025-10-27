@@ -103,7 +103,7 @@ a {
 }
 
 #main-content-place {
-  background-color: #24517f;
+  background-color: #ffffff;
   width: 100%;
   height: 100%;
 }
@@ -552,6 +552,7 @@ h2 {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   overflow: hidden;
+  margin-top: 20px;
 }
 
 .material-header {
@@ -576,17 +577,18 @@ h2 {
 }
 
 .action-icon {
-  background-color: transparent;
-  border: none;
-  border-radius: 50%;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
-  padding: 0;
-  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
+}
+
+.action-icon img {
+  width: 24px;
+  height: 24px;
 }
 
 #toggle-collapse-btn img {
@@ -601,7 +603,7 @@ h2 {
   padding: 20px;
   max-height: 1000px;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.3s ease-out;
+  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
 }
 
 .material-content.is-collapsed {
@@ -763,11 +765,6 @@ h2 {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
-/* body {
-  background-color: #f3f3f3;
-  padding: 40px;
-} */
 
 /* Container utama */
 .dashboard-container {
