@@ -58,7 +58,6 @@
 .dropdown-icon {
   transition: transform 0.3s ease;
 }
-
 .toggle-btn.collapsed .dropdown-icon {
   transform: rotate(-90deg);
 }
@@ -67,16 +66,18 @@
   padding: 20px;
   transition: max-height 0.3s ease-out, padding 0.3s ease-out;
   overflow-y: auto;
-  height: 400px;
+  display: none;
+  height: 375px;
 }
 
 .assignment-list.is-collapsed {
+  display: block;
   max-height: 0;
   padding-top: 0;
   padding-bottom: 0;
   transition: max-height 0.3s ease-in, padding 0.3s ease-in;
 }
-.container-scroll::-webkit-scrollbar {
+.assignment-list::-webkit-scrollbar {
   display: none;
 }
 
@@ -89,6 +90,7 @@
   padding: 16px;
   margin-top: 16px;
   background-color: white;
+  cursor: pointer;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 

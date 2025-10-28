@@ -1,0 +1,26 @@
+a {
+  cursor: pointer;
+}
+.card-schedule {
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  border-radius: 5px;
+  background-color: rgb(203, 203, 203);
+  min-width: 250px;
+  height: 100px;
+}
+#schedule-container {
+  width: 94%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow-x: scroll;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  padding: 10px;
+}
+#schedule-container::-webkit-scrollbar {
+  display: none;
+  height: 0;
+}

@@ -27,7 +27,31 @@ $(document).ready(function () {
       });
     })
     .catch((error) => console.error("Error loading data:", error));
-  $("#schedule-container").on("click", ".card-schedule", function () {
+  $("#course-container").on("click", ".card-course", function () {
     $("#main-content-place").load("material_and_assignment/card.html");
   });
+});
+
+const popup = document.getElementById("bapPopup");
+const closeBtn = document.getElementById("closePopup");
+const saveBtn = document.getElementById("saveBAP");
+
+document.querySelectorAll("#schedule-container").forEach((card) => {
+  card.addEventListener("click", () => {
+    popup.style.display = "block";
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  popup.style.display = "none";
+});
+
+saveBtn.addEventListener("click", () => {
+  const materi = document.getElementById("materiInput").value;
+  const indikator = document.getElementById("indikatorInput").value;
+  const tempat = document.getElementById("tempatInput").value;
+
+  console.log("Data BAP disimpan:", { materi, indikator, tempat });
+  alert("BAP berhasil disimpan!");
+  popup.style.display = "none";
 });
