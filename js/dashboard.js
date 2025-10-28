@@ -1,41 +1,51 @@
-const courses = [
-  { name: "Matematika", class: "IPA 1" },
-  { name: "Fisika", class: "IPA 1" },
-  { name: "Kimia", class: "IPA 1" },
-];
-
-const courseContainer = document.getElementById("courseContainer");
-
-courses.forEach(course => {
-  const card = document.createElement("div");
-  card.classList.add("course-card");
-
-  card.innerHTML = `
-    <h4>${course.name}</h4>
-    <p>• ${course.class}</p>
-  `;
-
-  courseContainer.appendChild(card);
+$(document).ready(function () {
+  fetch("data/dashboard.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const courseContainer = document.getElementById("course-container");
+      courseContainer.innerHTML = "";
+      data.courses.forEach((course) => {
+        const courseDiv = document.createElement("div");
+        courseDiv.className = "card-course";
+        courseDiv.innerHTML = `
+        <a>${course.name}</a>
+        <a>${course.class}</a>
+    `;
+        courseContainer.appendChild(courseDiv);
+      });
+      const scheduleContainer = document.getElementById("schedule-container");
+      scheduleContainer.innerHTML = "";
+      data.today_schedule.forEach((schedule) => {
+        const scheduleDiv = document.createElement("div");
+        scheduleDiv.className = "card-schedule";
+        scheduleDiv.innerHTML = `
+        <a>${schedule.subject}</a>
+        <a>${schedule.time}</a>
+        <a>${schedule.class}</a>
+    `;
+        scheduleContainer.appendChild(scheduleDiv);
+      });
+    })
+    .catch((error) => console.error("Error loading data:", error));
+  $("#course-container").on("click", ".card-course", function () {
+    $("#main-content-place").load("material_and_assignment/card.html");
+  });
 });
 
-// ==== POPUP LOGIC ====
 const popup = document.getElementById("bapPopup");
 const closeBtn = document.getElementById("closePopup");
 const saveBtn = document.getElementById("saveBAP");
 
-// Ketika klik salah satu schedule card → tampilkan popup
-document.querySelectorAll(".schedule-card").forEach(card => {
+document.querySelectorAll("#schedule-container").forEach((card) => {
   card.addEventListener("click", () => {
-    popup.style.display = "flex";
+    popup.style.display = "block";
   });
 });
 
-// Tombol batal menutup popup
 closeBtn.addEventListener("click", () => {
   popup.style.display = "none";
 });
 
-// Tombol simpan (contohnya hanya menutup popup)
 saveBtn.addEventListener("click", () => {
   const materi = document.getElementById("materiInput").value;
   const indikator = document.getElementById("indikatorInput").value;
