@@ -1,15 +1,12 @@
-
-fetch('data/menu.json')
-.then(response => response.json())
-.then(data => {
-    const nav = document.getElementById('nav-place');
-    nav.innerHTML = '';
-    const logoDiv = document.createElement('div');
-    logoDiv.className = 'logo';
+fetch("data/menu.json")
+  .then((response) => response.json())
+  .then((data) => {
+    const nav = document.getElementById("nav-place");
+    nav.innerHTML = "";
+    const logoDiv = document.createElement("div");
+    logoDiv.className = "logo";
     logoDiv.innerHTML = `
-      <img src="${data.logo}" alt="Logo" style="width:200px;">
-      <a>${data.userRole}</a>
-    `;
+      <img src="${data.logo}" alt="Logo" style="width:200px;">`;
     nav.appendChild(logoDiv);
 
     const contentNav = document.createElement("div");
@@ -48,22 +45,22 @@ $(".burger").click(function () {
 });
 
 // bell icon click
-$(".rightHead img").click(function(){
-  fetch('data/notif.json')
-  .then(response => response.json())
-  .then (data=>{
-    const notifContent = document.getElementById('notif-content');
-    notifContent.innerHTML = '';
+$(".rightHead img").click(function () {
+  fetch("data/notif.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const notifContent = document.getElementById("notif-content");
+      notifContent.innerHTML = "";
 
-    for(let i=0; i<data.notifications.length; i++){
-      const notifItem = document.createElement("div");
-      notifItem.className = "notif-item";
-      notifItem.innerHTML = data.notifications[i];
-      notifContent.appendChild(notifItem);
-    }
-    $('#notif-content').toggleClass('active');
-  })
-  .catch(error=>{
-    console.error("Error fetching notifications:", error);
-  })
-})
+      for (let i = 0; i < data.notifications.length; i++) {
+        const notifItem = document.createElement("div");
+        notifItem.className = "notif-item";
+        notifItem.innerHTML = data.notifications[i];
+        notifContent.appendChild(notifItem);
+      }
+      $("#notif-content").toggleClass("active");
+    })
+    .catch((error) => {
+      console.error("Error fetching notifications:", error);
+    });
+});
