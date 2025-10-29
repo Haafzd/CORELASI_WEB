@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body.landing{
+  min-height:100%;
+  display:grid;
+  grid-template-rows:1fr auto;
+  background:#ffffff;
+  color:#1f2937;
+  font:14px/1.6 'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial;
+}
+
+/* kartu pusat */
+.splash{
+  display:grid;
+  place-items:center;
+}
+.splash .card{
+  width:100%;
+  max-width:520px;
+  background:#fff;
+  border:1px solid #e7eaf2;
+  border-radius:14px;
+  box-shadow:0 8px 24px rgba(26,39,89,.06);
+  padding:28px 28px 24px;
+  text-align:center;
+}
+
+.logo{
+  width:140px;
+  height:140px;
+  margin:0 auto 10px;
+  object-fit:contain;
+  filter:drop-shadow(0 8px 32px rgba(96,181,255,.18));
+}
+.brand{font-weight:600;letter-spacing:.12em;margin-bottom:4px}
+.tagline{color:#8f95a0;margin-bottom:16px}
+
+/* tombol */
+.btn{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:10px;
+  border:1px solid #e5e7eb;
+  background:#eef2f8;
+  color:#334155;
+  text-decoration:none;
+}
+.btn:hover{filter:brightness(1.03);}
+
+.site-footer{
+  text-align:center;
+  padding:12px;
+  color:#8f95a0;
+  font:12px/1.4 'Poppins',sans-serif;
+}

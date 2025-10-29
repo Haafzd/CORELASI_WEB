@@ -1,0 +1,38 @@
+{
+  "courses": [
+    {
+      "name": "Matematika",
+      "class": "IPA 1"
+    },
+    {
+      "name": "Matematika",
+      "class": "IPA 1"
+    },
+    {
+      "name": "Matematika",
+      "class": "IPA 1"
+    }
+  ],
+  "today_schedule": [
+    {
+      "subject": "Fisika",
+      "time": "10:30 - 12:30",
+      "class": "IPA 2"
+    },
+    {
+      "subject": "Fisika",
+      "time": "10:30 - 12:30",
+      "class": "IPA 2"
+    },
+    {
+      "subject": "Fisika",
+      "time": "10:30 - 12:30",
+      "class": "IPA 2"
+    },
+    {
+      "subject": "Fisika",
+      "time": "10:30 - 12:30",
+      "class": "IPA 2"
+    }
+  ]
+}
