@@ -30,6 +30,6 @@ $(document).ready(function () {
     })
     .catch((error) => console.error("error data loading: " + error));
   $("#asg-list").on("click", ".asg-item", function () {
-    $("#main-content-place").load("material_and_assignment/tgsPertemuan.html");
+    $("#main-content-place").load("material_and_assignment/dailyTask.html");
   });
 });
