@@ -335,20 +335,27 @@
 /* end of tugas style */
 
 /* initial of task tgsPertemuan.html */
-page-container {
-  max-width: 800px;
-  margin: 50px auto;
-  min-height: 70vh;
+.page-container {
+  max-width: 98%;
+  margin: 10px auto;
   background: #ffffff;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  padding: 24px 30px;
+  padding: 25px 25px 0px 25px;
+  overflow-y: auto;
+  height: 740px;
+}
+.page-container::-webkit-scrollbar {
+  display: none;
 }
 .task-section {
   margin-bottom: 30px;
 }
-
+.page-container h1 {
+  margin-bottom: 20px;
+  margin-left: -2px;
+}
 .task-section p,
 .task-section li {
   font-size: 15px;
@@ -358,7 +365,7 @@ page-container {
 
 .task-section strong {
   display: block;
-  margin-top: 16px;
+  margin-top: 1px;
   margin-bottom: 8px;
   font-weight: 600;
 }
