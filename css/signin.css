@@ -1,0 +1,46 @@
+.signin-page {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+    background: #f6f7fb
+}
+
+.signin-page .auth-wrap {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding: 28px 16px
+}
+
+.signin-page .auth-card {
+    max-width: 520px
+}
+
+.signin-page .auth-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 10px
+}
+
+.signin-page .form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 13px
+}
+
+.signin-page .form input {
+    width: 100%;
+    margin-top: 6px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    color: #111827
+}
+
+.signin-page .form input::placeholder {
+    color: #9aa3af
+}
