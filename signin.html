@@ -24,15 +24,38 @@
   <footer class="site-footer"><small>2019 Copyright Store. All Rights Reserved.</small></footer>
 
   <script>
-    document.getElementById('form').addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      const email=document.getElementById('email').value;
-      const pass=document.getElementById('password').value;
-      try{
-        await CorelasiAuth.login(email, pass);   // validasi email + password
-        location.href = 'layout.html';
-      }catch(err){ alert(err.message||'Login gagal'); }
-    });
-  </script>
+  document.getElementById('form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('email').value.trim().toLowerCase();
+    const pass  = document.getElementById('password').value;
+
+    try {
+      const users = await CorelasiAuth.loadUsers();
+
+      const user = users.find(u =>
+        String(u.email || '').toLowerCase() === email &&
+        String(u.password || '') === pass
+      );
+
+      if (!user) {
+        alert('Email atau password salah.');
+        return;
+      }
+
+      CorelasiAuth.setSession({
+        id:   user.id,
+        name: user.name,
+        role: user.role,
+        email: user.email,
+        avatar: user.avatar || 'aset/pp.jpg'
+      });
+
+      location.href = 'layout.html';
+    } catch (err) {
+      console.error(err);
+      alert('Gagal memuat data pengguna.');
+    }
+  });
 </body>
 </html>
