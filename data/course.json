@@ -1,0 +1,6 @@
+[
+  { "subject": "Matematika", "teacher": "Ibu Sarah", "day": "Selasa", "start": "09:15", "end": "10:45" },
+  { "subject": "Kimia",      "teacher": "Pak Ahmad", "day": "Senin",  "start": "07:30", "end": "09:00" },
+  { "subject": "Fisika",     "teacher": "Pak Budi",  "day": "Selasa", "start": "09:15", "end": "10:45" },
+  { "subject": "Bahasa Indonesia","teacher": "Pak Bayu",  "day": "Senin", "start": "09:15", "end": "10:45" }
+]
