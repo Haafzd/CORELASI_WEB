@@ -15,7 +15,7 @@
       "jsFile": "./js/teachingSchedule.js"
     },
     {
-      "icon": "./aset/teaching.png",
+      "icon": "./aset/course.png",
       "label": "Mata Pelajaran",
       "link": "course.html",
       "jsFile": "./js/course.js"

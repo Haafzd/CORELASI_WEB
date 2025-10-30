@@ -1,0 +1,23 @@
+{
+  "assignments": [
+    {
+      "title": "Tugas Matematika",
+      "description": "Kerjakan soal Matematika teorema pytagoras yang ada dalam link di bawah ini",
+      "link": "https://mathcyber1997.com/soal-dan-pembahasan-teorema-pythagoras/"
+    },
+     {
+      "title": "Tugas Matematika",
+      "description": "Kerjakan soal Matematika teorema pytagoras yang ada dalam link di bawah ini",
+      "link": "https://mathcyber1997.com/soal-dan-pembahasan-teorema-pythagoras/"
+    },
+     {
+       "title": "Tugas Matematika",
+       "description": "Kerjakan soal Matematika teorema pytagoras yang ada dalam link di bawah ini",
+       "link": "https://mathcyber1997.com/soal-dan-pembahasan-teorema-pythagoras/"
+     }, {
+       "title": "Tugas Matematika",
+       "description": "Kerjakan soal Matematika teorema pytagoras yang ada dalam link di bawah ini",
+       "link": "https://mathcyber1997.com/soal-dan-pembahasan-teorema-pythagoras/"
+     }
+  ]
+}

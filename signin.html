@@ -1,42 +1,38 @@
 <!doctype html>
 <html lang="id">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sign In — CORELASI</title>
-    <link rel="stylesheet" href="css/base.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign In — CORELASI</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/signin.css">
+  <script src="js/auth.js" defer></script>
 </head>
+<body class="signin-page">
+  <main class="auth-wrap">
+    <div class="auth-card card">
+      <img src="aset/logo.png" alt="CORELASI" class="auth-logo">
+      <form class="form" id="form">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="email@school.id" required>
+        <label for="password" style="margin-top:12px">Password</label>
+        <input id="password" type="password" placeholder="••••••••" required>
+        <button type="submit" class="btn primary" style="margin-top:12px">Sign In</button>
+      </form>
+    </div>
+  </main>
+  <footer class="site-footer"><small>2019 Copyright Store. All Rights Reserved.</small></footer>
 
-<body class="signin">
-    <main class="container">
-        <section class="auth-wrap">
-            <div class="auth-card card">
-                <img src="aset/logo.png" alt="CORELASI" class="auth-logo">
-                <form class="form" onsubmit="event.preventDefault(); return loginHandler();">
-                    <label for="email">Username</label>
-                    <input id="email" type="email" placeholder="email@school.id" required>
-                    <label for="password" style="margin-top:12px">Password</label>
-                    <input id="password" type="password" placeholder="••••••••" required>
-                    <button type="submit" class="btn primary">Sign In</button>
-                </form>
-            </div>
-        </section>
-    </main>
-
-    <footer class="site-footer"><small>2019 Copyright Store. All Rights Reserved.</small></footer>
-    <script src="js/auth.js" defer></script>
-    <script>
-        async function loginHandler() {
-            const email = document.getElementById('email').value.trim().toLowerCase();
-            const users = await CorelasiAuth.loadUsers();
-            const u = users.find(x => x.email.toLowerCase() === email);
-            if (!u) { alert('Akun tidak ditemukan.'); return false }
-            CorelasiAuth.setSession({ email: u.email, name: u.name, role: u.role });
-            location.href = (u.role === 'admin') ? 'admin.html' : (u.role === 'teacher') ? 'layout.html' : 'student.html';
-            return false;
-        }
-    </script>
+  <script>
+    document.getElementById('form').addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const email=document.getElementById('email').value;
+      const pass=document.getElementById('password').value;
+      try{
+        await CorelasiAuth.login(email, pass);   // validasi email + password
+        location.href = 'layout.html';
+      }catch(err){ alert(err.message||'Login gagal'); }
+    });
+  </script>
 </body>
-
 </html>
