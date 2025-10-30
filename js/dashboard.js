@@ -1,4 +1,4 @@
-$("#bapPopup").hide();
+ $("#bapPopup").hide();
 $(document).ready(function () {
  
   fetch("data/dashboard.json")
@@ -15,8 +15,6 @@ $(document).ready(function () {
         `);
         courseContainer.append(courseDiv);
       });
-    })
-});
 
       const scheduleContainer = $("#schedule-container");
       scheduleContainer.html("");
