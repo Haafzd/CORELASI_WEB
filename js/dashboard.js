@@ -1,57 +1,54 @@
+ $("#bapPopup").hide();
 $(document).ready(function () {
+ 
   fetch("data/dashboard.json")
     .then((response) => response.json())
     .then((data) => {
-      const courseContainer = document.getElementById("course-container");
-      courseContainer.innerHTML = "";
+      const courseContainer = $("#course-container");
+      courseContainer.html("");
       data.courses.forEach((course) => {
-        const courseDiv = document.createElement("div");
-        courseDiv.className = "card-course";
-        courseDiv.innerHTML = `
-        <a>${course.name}</a>
-        <a>${course.class}</a>
-    `;
-        courseContainer.appendChild(courseDiv);
+        const courseDiv = $(`
+          <div class="card-course">
+            <a>${course.name}</a>
+            <a>${course.class}</a>
+          </div>
+        `);
+        courseContainer.append(courseDiv);
       });
-      const scheduleContainer = document.getElementById("schedule-container");
-      scheduleContainer.innerHTML = "";
+
+      const scheduleContainer = $("#schedule-container");
+      scheduleContainer.html("");
       data.today_schedule.forEach((schedule) => {
-        const scheduleDiv = document.createElement("div");
-        scheduleDiv.className = "card-schedule";
-        scheduleDiv.innerHTML = `
-        <a>${schedule.subject}</a>
-        <a>${schedule.time}</a>
-        <a>${schedule.class}</a>
-    `;
-        scheduleContainer.appendChild(scheduleDiv);
+        const scheduleDiv = $(`
+          <div class="card-schedule">
+            <a>${schedule.subject}</a>
+            <a>${schedule.time}</a>
+            <a>${schedule.class}</a>
+          </div>
+        `);
+        scheduleContainer.append(scheduleDiv);
       });
     })
     .catch((error) => console.error("Error loading data:", error));
-  $("#course-container").on("click", ".card-course", function () {
+  $(document).on("click", ".card-course", function () {
     $("#main-content-place").load("material_and_assignment/card.html");
   });
-});
 
-const popup = document.getElementById("bapPopup");
-const closeBtn = document.getElementById("closePopup");
-const saveBtn = document.getElementById("saveBAP");
-
-document.querySelectorAll("#schedule-container").forEach((card) => {
-  card.addEventListener("click", () => {
-    popup.style.display = "block";
+  $(document).on("click", ".card-schedule", function () {
+    $("#bapPopup").show();
   });
-});
 
-closeBtn.addEventListener("click", () => {
-  popup.style.display = "none";
-});
+  $(document).on("click", "#closePopup", function () {
+    $("#bapPopup").hide();
+  });
 
-saveBtn.addEventListener("click", () => {
-  const materi = document.getElementById("materiInput").value;
-  const indikator = document.getElementById("indikatorInput").value;
-  const tempat = document.getElementById("tempatInput").value;
+  $(document).on("click", "#saveBAP", function () {
+    const materi = $("#materiInput").val();
+    const indikator = $("#indikatorInput").val();
+    const tempat = $("#tempatInput").val();
 
-  console.log("Data BAP disimpan:", { materi, indikator, tempat });
-  alert("BAP berhasil disimpan!");
-  popup.style.display = "none";
+    console.log("Data BAP disimpan:", { materi, indikator, tempat });
+    alert("BAP berhasil disimpan!");
+    $("#bapPopup").hide();
+  });
 });
