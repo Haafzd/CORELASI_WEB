@@ -1,21 +1,39 @@
 body {
-  margin: 0; 
+  margin: 0;
   overflow-x: hidden;
   overflow-y: hidden;
 }
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-body, div, span, p, a, h1, h2, h3, h4, h5, h6, li, ul, ol, button, input, textarea, select {
-  font-family: 'Poppins', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+body,
+div,
+span,
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+ul,
+ol,
+button,
+input,
+textarea,
+select {
+  font-family: "Poppins", sans-serif;
 }
 
-.nav-item, .nav-link, .logo, .content-nav {
-  font-family: 'Poppins', sans-serif !important;
+.nav-item,
+.nav-link,
+.logo,
+.content-nav {
+  font-family: "Poppins", sans-serif !important;
 }
 
-/* ==================== */
-/* STRUCTURE LAYOUT */
-/* ==================== */
 #layout {
   display: flex;
   gap: 10;
@@ -54,9 +72,18 @@ a {
   height: 100%;
 }
 
-.nav-item.active, .nav-item:hover {
+.nav-item.active,
+.nav-item:hover {
   transition: 0.3s;
-  border-bottom: 1px solid #24a0ff;
+  background-color: #707FDD;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 #footer-place {
@@ -74,9 +101,10 @@ a {
 }
 
 #main-content-place {
-  background-color: #24517f;
+  background-color: #ffffff;
   width: 100%;
   height: 100%;
+  padding: 10px;
 }
 
 #header-place {
@@ -86,6 +114,7 @@ a {
   color: black;
   padding-right: 20px;
   padding-left: 20px;
+  gap: 18px;
 }
 
 #header-place .profile-pic {
@@ -95,9 +124,17 @@ a {
   background-color: antiquewhite;
 }
 
-#header-place .rightHead {
-  margin-right: 30px;
+.search-bar{
   display: flex;
+  flex-direction:row;
+  gap:10px;
+  width:100%;
+  align-items: center;
+}
+
+#header-place .rightHead {
+  display: flex;
+  position: sticky;
   flex-direction: row;
   align-items: center;
   gap: 30px;
@@ -127,28 +164,93 @@ a {
 }
 
 #header-place {
+  padding-right: 30px;
+  padding-top: 10px;
   height: 50px;
   display: flex;
   justify-content: space-between;
   text-align: center;
   align-items: center;
   color: white;
-  font-size: 24px;
+  font-size: 20px;
 }
 
-
 /* ==== RESET & DASAR ==== */
-body {
+/* body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   margin: 0;
   padding: 20px;
+} */
+#notif-content {
+  width: 250px;
+  position: absolute;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-h2, h3, h4, p {
+#notif-content.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.notif-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid red;
+  border-radius: 20px;
+  background-color: rgb(247, 247, 247);
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.burger {
+  font-size: 26px;
+  cursor: pointer;
+  color: black;
+  z-index: 1001;
+  position: fixed;
+  display: none;
+}
+
+/* buat responsive sidebar */
+@media (max-width: 768px) {
+  #nav-place {
+    position: fixed;
+    left: -600px;
+    top: 0;
+    height: 100%;
+    transition: left 0.3s ease;
+  }
+
+  #nav-place.active {
+    left: 0;
+  }
+
+  .burger {
+    left: 5px;
+    left: 5px;
+    display: block;
+  }
+
+  #header-place {
+    padding-left: 50px;
+  }
+
+  .header-title {
+    font-size: 18px;
+  }
+}
+
+/* h2, h3, h4, p {
   margin: 0;
   padding: 0;
-}
+} */
 
 /* ==== DASHBOARD WRAPPER ==== */
 .dashboard-container {
@@ -212,134 +314,96 @@ h2 {
   }
 }
 
- body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-      margin: 0;
-      padding: 20px;
-    }
+.dashboard-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
-    .dashboard-container {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
+h2 {
+  color: #333;
+}
 
-    h2 {
-      color: #333;
-    }
+.course-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+}
 
-    .course-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-top: 10px;
-    }
+.course-card {
+  background-color: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 180px;
+  padding: 16px;
+  text-align: center;
+  transition: transform 0.2s;
+}
 
-    .course-card {
-      background-color: #fafafa;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      width: 180px;
-      padding: 16px;
-      text-align: center;
-      transition: transform 0.2s;
-    }
+.course-card:hover {
+  transform: scale(1.05);
+}
 
-    .course-card:hover {
-      transform: scale(1.05);
-    }
+.course-card h4 {
+  margin: 0;
+  color: #333;
+}
 
-    .course-card h4 {
-      margin: 0;
-      color: #333;
-    }
-
-    .course-card p {
-      color: #666;
-      font-size: 14px;
-    }
+.course-card p {
+  color: #666;
+  font-size: 14px;
+}
 
 /*css teachingSchedule*/
-  .days {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-  }
-
-  .day {
-    flex: 0 0 auto;
-    background-color: white;
-    border: 2px solid #ddd;
-    border-radius: 15px;
-    padding: 16px 40px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s;
-  }
-
-  .day.active {
-    background-color: #222;
-    color: white;
-    border-color: #222;
-  }
-
-  .schedule {
-    margin-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
-  .subject {
-    background-color: #ddd;
-    padding: 10px;
-    border-radius: 3px;
-    margin-bottom: 10px;
-  }
-
-  .subject b {
-    display: block;
-  }
-
-  .subject small {
-    display: block;
-    margin-top: 3px;
-  }
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0
+.days {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
 }
 
-html,
-body {
-  height: 100%
+.day {
+  flex: 0 0 auto;
+  background-color: white;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  padding: 16px 40px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
 }
 
-body {
-  font: 14px/1.6 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial;
-  color: #1f2937;
-  background: #ffffff
+.day.active {
+  background-color: #222;
+  color: white;
+  border-color: #222;
 }
 
-a {
-  color: #1f6fd8;
-  text-decoration: none
+.schedule {
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-a:hover {
-  text-decoration: underline
+.subject {
+  background-color: #ddd;
+  padding: 10px;
+  border-radius: 3px;
+  margin-bottom: 10px;
 }
 
-img {
-  max-width: 100%;
-  display: block
+.subject b {
+  display: block;
+}
+
+.subject small {
+  display: block;
+  margin-top: 3px;
 }
 
 .btn {
@@ -350,25 +414,25 @@ img {
   background: #eef2f8;
   color: #334155;
   text-align: center;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .btn.primary {
-  background: #60B5FF;
+  background: #60b5ff;
   color: #fff;
-  border: none
+  border: none;
 }
 
 .btn:hover {
-  filter: brightness(1.03)
+  filter: brightness(1.03);
 }
 
 .card {
   background: #fff;
   border: 1px solid #e7eaf2;
   border-radius: 14px;
-  box-shadow: 0 8px 24px rgba(26, 39, 89, .06);
-  padding: 28px
+  box-shadow: 0 8px 24px rgba(26, 39, 89, 0.06);
+  padding: 28px;
 }
 
 .site-footer,
@@ -377,11 +441,11 @@ img {
   text-align: center;
   padding: 12px;
   color: #8f95a0;
-  font-size: 12px
+  font-size: 12px;
 }
 
 /* ================== LANDING ================== */
-body.landing {
+.landing {
   display: grid;
   grid-template-rows: 1fr auto;
   background: #ffffff;
@@ -390,52 +454,51 @@ body.landing {
 .landing .splash {
   display: grid;
   place-items: center;
-  padding: 24px
+  padding: 24px;
 }
 
 .landing .splash .card {
   max-width: 520px;
   padding: 20px 24px;
-  text-align: center
+  text-align: center;
 }
 
 .landing .splash .logo {
   width: 120px;
   height: 120px;
-  margin: 0 auto 6px
+  margin: 0 auto 6px;
 }
 
 .landing .splash .brand {
   margin-bottom: 2px;
   font-weight: 600;
-  letter-spacing: .12em
+  letter-spacing: 0.12em;
 }
 
 .landing .splash .tagline {
   margin: 4px 0 8px;
-  color: #8f95a0
+  color: #8f95a0;
 }
 
 .landing .splash .btn {
-  margin-top: 6px
+  margin-top: 6px;
 }
-
 
 /* ================== SIGNIN ================== */
 .container {
   display: grid;
-  place-items: center
+  place-items: center;
 }
 
 .auth-wrap {
   width: 100%;
   display: grid;
   place-items: center;
-  padding: 28px 16px
+  padding: 28px 16px;
 }
 
 .auth-card {
-  max-width: 520px
+  max-width: 520px;
 }
 
 .auth-card .auth-logo {
@@ -444,23 +507,23 @@ body.landing {
   object-fit: contain;
   display: block;
   margin: 0 auto 10px;
-  filter: drop-shadow(0 8px 24px rgba(96, 181, 255, .12))
+  filter: drop-shadow(0 8px 24px rgba(96, 181, 255, 0.12));
 }
 
 .auth-logo,
-.logo {
+.logo-signin {
   width: 140px;
   height: 140px;
   object-fit: contain;
   display: block;
-  margin: 0 auto 10px
+  margin: 0 auto 10px;
 }
 
 .form label {
   display: block;
   margin-top: 10px;
   font-weight: 600;
-  font-size: 13px
+  font-size: 13px;
 }
 
 .form input {
@@ -470,34 +533,198 @@ body.landing {
   border-radius: 10px;
   border: 1px solid #cbd5e1;
   background: #fff;
-  color: #111827
+  color: #111827;
 }
 
 .form input::placeholder {
-  color: #9aa3af
+  color: #9aa3af;
 }
 
 .form input:focus,
 .btn:focus {
-  outline: 2px solid #A8D4FF;
-  outline-offset: 2px
+  outline: 2px solid #a8d4ff;
+  outline-offset: 2px;
 }
 
-body.signin {
+.signin {
   display: grid;
   grid-template-rows: 1fr auto;
   background: #f6f7fb;
 }
 
-body.signin .site-header {
-  display: none
+.signin .site-header {
+  display: none;
 }
 
 .center {
-  text-align: center
+  text-align: center;
 }
 
+/* Hafidz Musyafa - Materi */
+
+/* End - Material */
 .small {
   max-width: 520px;
-  margin: 0 auto
+  margin: 0 auto;
+}
+
+/*bagian dashboard yang schedule*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Container utama */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Section judul */
+.course-section h2,
+.schedule-section h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Daftar Course */
+.course-list {
+  display: flex;
+  gap: 20px;
+}
+
+.course-card {
+  background: #fff;
+  padding: 20px;
+  width: 200px;
+  border-radius: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.course-card h3 {
+  font-size: 18px;
+  color: #000;
+}
+
+.course-card p {
+  color: #555;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Jadwal Hari Ini */
+.schedule-list {
+  display: flex;
+  gap: 20px;
+}
+
+.schedule-card {
+  background: #e9e9e9;
+  padding: 20px;
+  width: 180px;
+  border-radius: 8px;
+}
+
+.schedule-card h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.schedule-card p {
+  font-size: 13px;
+  color: #444;
+  margin-top: 4px;
+}
+
+/* ===== POPUP BAP ===== */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: none;
+  /* awalnya disembunyikan */
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-content {
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 10px;
+  width: 400px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.popup-content h4 {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.popup-content label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+  color: #333;
+}
+
+.popup-content input {
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.popup-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#closePopup {
+  background-color: #ccc;
+}
+
+#saveBAP {
+  background-color: #4caf50;
+  color: white;
+}
+
+#header-place .profile-pic {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #f6ead9;
+  overflow: hidden
+}
+
+#header-place .profile-pic img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover
 }

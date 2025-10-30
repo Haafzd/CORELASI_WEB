@@ -1,19 +1,19 @@
-const courses = [
-  { name: "Matematika", class: "IPA 1" },
-  { name: "Fisika", class: "IPA 1" },
-  { name: "Kimia", class: "IPA 1" },
-];
-
-const courseContainer = document.getElementById("courseContainer");
-
-courses.forEach(course => {
-  const card = document.createElement("div");
-  card.classList.add("course-card");
-
-  card.innerHTML = `
-    <h4>${course.name}</h4>
-    <p>• ${course.class}</p>
-  `;
-
-  courseContainer.appendChild(card);
+$("#bapPopup").hide();
+$(document).ready(function () {
+ 
+  fetch("data/dashboard.json")
+    .then((response) => response.json())
+    .then((data) => {
+      const courseContainer = $("#course-container");
+      courseContainer.html("");
+      data.courses.forEach((course) => {
+        const courseDiv = $(`
+          <div class="card-course">
+            <a>${course.name}</a>
+            <a>${course.class}</a>
+          </div>
+        `);
+        courseContainer.append(courseDiv);
+      });
+    })
 });
