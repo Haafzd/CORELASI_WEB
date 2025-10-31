@@ -1,56 +1,39 @@
-const toggleBtn = document.getElementById("toggle-collapse-btn");
-const content = document.getElementById("material-content");
+$(document).ready(function() {
+    
+    // --- 1. (Collapse/Expand) ---
+    $('#toggle-collapse-btn').on('click', function() {
+        $(this).toggleClass('is-toggled');
+        
+        $('#material-content').toggleClass('is-collapsed');
+    });
 
-if (toggleBtn && content) {
-  toggleBtn.addEventListener("click", () => {
-    content.classList.toggle("is-collapsed");
+    // --- 2. Modal (Buka/Tutup) ---
+    const $modal = $('#add-material-modal');
 
-    toggleBtn.classList.toggle("is-toggled");
-  });
-}
+    $('#add-material-btn').on('click', function() {
+        $modal.addClass('is-active');
+    });
 
-const modal = document.getElementById("add-material-modal");
-const addBtn = document.getElementById("add-material-btn");
-const closeBtn = document.getElementById("close-modal-btn");
-const addForm = document.getElementById("add-material-form");
+    $('#close-modal-btn').on('click', function() {
+        $modal.removeClass('is-active');
+    });
 
-function openModal() {
-  if (modal) {
-    modal.classList.add("is-active");
-  }
-}
+    $modal.on('click', function(event) {
+        if ($(event.target).is($modal)) {
+            $modal.removeClass('is-active');
+        }
+    });
+    
+    $('#add-material-form').on('submit', function(event) {
+        event.preventDefault();
+        alert('Materi (pura-pura) disimpan!');
+        
+        const namaMateri = $('#nama-materi').val();
+        console.log('Nama Materi:', namaMateri);
+        
+        $modal.removeClass('is-active');
+        
+        $(this).trigger('reset');
+    });
 
-function closeModal() {
-  if (modal) {
-    modal.classList.remove("is-active");
-  }
-}
-
-if (addBtn) {
-  addBtn.addEventListener("click", openModal);
-}
-if (closeBtn) {
-  closeBtn.addEventListener("click", closeModal);
-}
-
-if (modal) {
-  modal.addEventListener("click", (event) => {
-    if (event.target === modal) {
-      closeModal();
-    }
-  });
-}
-
-if (addForm) {
-  addForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    alert("Materi (pura-pura) disimpan!");
-
-    const namaMateri = document.getElementById("nama-materi").value;
-    console.log("Nama Materi:", namaMateri);
-
-    closeModal();
-
-    addForm.reset();
-  });
-}
+});

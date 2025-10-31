@@ -47,10 +47,11 @@
 
 #toggle-collapse-btn img {
   transition: transform 0.3s ease;
+  transform: rotate(-90deg);
 }
 
 #toggle-collapse-btn.is-toggled img {
-  transform: rotate(-90deg);
+  transform: rotate(0deg);
 }
 
 .material-content.is-toggled {
