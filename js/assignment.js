@@ -32,4 +32,8 @@ $(document).ready(function () {
   $("#asg-list").on("click", ".asg-item", function () {
     $("#main-content-place").load("material_and_assignment/dailyTask.html");
   });
+
+  $("#submited").on("click", function () {
+    alert("Tugas telah ditambahkan");
+  });
 });

@@ -59,26 +59,22 @@
   width: 24px;
   height: 24px;
 }
-
+.toggle-btn .dropdown-icon {
+  transform: rotate(-90deg);
+}
 .dropdown-icon {
   transition: transform 0.3s ease;
 }
 .toggle-btn.collapsed .dropdown-icon {
-  transform: rotate(-90deg);
+  transform: rotate(0deg);
 }
 
-.assignment-list.is-collapsed {
-  padding: 20px;
-  transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-  overflow-y: auto;
-}
 .assignment-list::-webkit-scrollbar {
   display: none;
 }
 .assignment-list {
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
 }
 .asg-item {
   display: block;
