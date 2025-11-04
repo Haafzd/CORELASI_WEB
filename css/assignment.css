@@ -347,7 +347,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   padding: 25px 25px 0px 25px;
   overflow-y: auto;
-  max-height: 800px;
+  max-height: 85vh;
 }
 .page-container::-webkit-scrollbar {
   display: none;
@@ -389,7 +389,9 @@ ul {
   text-overflow: ellipsis;
   font-family: "Courier New", Courier, monospace;
 }
-
+.link-box a {
+  color: #007aff;
+}
 .submitted-table {
   width: 100%;
   border-collapse: collapse;
